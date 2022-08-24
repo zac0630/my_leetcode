@@ -44,8 +44,11 @@ void traverse(TreeNode* root){
         return;
     }
     cur += root->val;
-    if(root->left == root->right)
-        found = true;
+    if(root->left == root->right){
+        if( cur == target){
+            found = true;
+        }
+    }
 
     traverse(root->left);
     traverse(root->right);
