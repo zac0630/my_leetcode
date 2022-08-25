@@ -37,7 +37,7 @@ public:
             return countPerfectTreeNodes(root);
         }
         // 如果左右侧的高度不同，则按照普通二叉树的逻辑计算
-        return 1 + countTreeNodes(root->left) + countTreeNodes(root->right);
+        return 1 + countNodes(root->left) + countNodes(root->right);
     }
     int countTreeNodes(TreeNode* root){
         if(root == NULL)
