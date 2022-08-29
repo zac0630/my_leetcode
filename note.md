@@ -367,3 +367,6 @@ void traverse(TreeNode root) {
 
 ## 404左叶子之和
 1. 遍历。在前序位置判断，root的左节点是否为空，不为空再判断是否是叶子节点，都满足的话累加值。
+
+## 437路径总和 III
+1. 遍历。遍历所有的节点。在前序位置计算前缀和preSum，判断map中是否有符合的target-preSum，map.(target-preSum)，同时将preSum插入map。后续位置是离开root的位置，维护前缀和preSum和map。
