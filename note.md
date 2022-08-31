@@ -383,3 +383,16 @@ void traverse(TreeNode root) {
 
 ##  513找树左下角的值
 1. 遍历。在遍历时记录最大深度，只有当前节点depth大于最大深度才加入结果，且利用到最大深度时第一次遇到的节点就是左下角的节点，直接拿到答案。
+
+## 515在每个树行中找最大值
+1. 层次遍历。在每一层进行大小判断，将最大值加入res。
+2. 深度遍历。使用vector，同时记录每一层的depth。
+```cpp
+//res.size() == depth 第一个节点加入，后面加入的节点都要做比较
+if (res.size() == depth) {
+    res.push_back(root->val);
+} else {
+    // 记录当前行的最大值
+    res[depth] = max(res[depth], root->val)
+}
+```
