@@ -370,3 +370,6 @@ void traverse(TreeNode root) {
 
 ## 437路径总和 III
 1. 遍历。遍历所有的节点。在前序位置计算前缀和preSum，判断map中是否有符合的target-preSum，map.(target-preSum)，同时将preSum插入map。后续位置是离开root的位置，维护前缀和preSum和map。
+
+## 501二叉搜索树中的众数
+1. 遍历。利用BST中序遍历是有序的特点，在中序位置判断出现次数最多的数。设置外部变量，当前元素的重复次数，全局的最长相同序列长度，保存前一个节点指针prev。
