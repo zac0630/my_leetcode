@@ -431,3 +431,23 @@ if (res.size() == depth) {
 
 ## 1104二叉树寻路
 1. 通过整除2得到正常路径，反转。根据对称性和奇偶行来调整其中的个别标号。
+
+## 669修剪二叉搜索树
+1. 分解问题。root.val < lo，这种情况下 root 节点本身和 root 的左子树全都是小于 lo 的，都需要被剪掉。root.val > hi，这种情况下 root 节点本身和 root 的右子树全都是大于 hi 的，都需要被剪掉。对符合范围的根节点，保持原样。
+```cpp
+if(root == NULL) return NULL;
+//情况一：删除 root 节点本身和 root 的左子树
+if(root->val < low){
+    // 直接返回 root.right
+    // 等于删除 root 以及 root 的左子树
+    return traverse(root->right);
+}
+//情况二：删除 root 节点本身和 root 的右子树
+if(root->val > high){
+    return traverse(root->left);
+}
+//情况三：当前节点符合要求，啥也不做，递归进左右节点
+root->left = traverse(root->left);
+root->right = traverse(root->right);
+return root;
+```
