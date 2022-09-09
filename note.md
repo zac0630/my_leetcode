@@ -451,3 +451,5 @@ root->left = traverse(root->left);
 root->right = traverse(root->right);
 return root;
 ```
+## 671二叉树中第二小的节点
+1. 分解问题。首先思考第二小的值出现的情况有哪些。很有代表性的分类讨论。代码的左右对称性很强。
