@@ -456,3 +456,14 @@ return root;
 
 ## 687最长同值路径
 1. 分解问题。定义：计算以 root 为根的这棵二叉树中，从 root 开始值为 parentVal 的最长树枝长度。在后序位置将左右树枝长度相加，找到最大长度。
+
+## 863二叉树中所有距离为 K 的结点
+1. 遍历问题。找到距离target为k的节点，不仅要遍历左右子节点，还要遍历父节点。首先遍历二叉树，找到每个节点的父节点，使用<unordered_map>存储子节点和父节点的对应关系。其次，需要记录已经访问过的节点，使用<unorder_sete>存储。层次遍历模板。
+```cpp
+unordered_set<int> visited;
+visited.emplace(val);
+visited.count(val);
+unordered_map<int, TreeNode*> parent;
+parent.emplace(val, parentNode);
+parent[val];
+```
