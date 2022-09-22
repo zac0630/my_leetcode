@@ -467,3 +467,7 @@ unordered_map<int, TreeNode*> parent;
 parent.emplace(val, parentNode);
 parent[val];
 ```
+
+## 933最近的请求次数
+1. 队列。维护差值小于3000的ping值。
+2. 快慢指针。
